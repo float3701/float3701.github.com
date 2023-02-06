@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="file/main.css" />
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<title>3701牌套娃浏览器（没屁用）</title>
+	</head>
+	<body>
+		<header>
+			<button id="enterbtn">>></button>
+			<input id="inputurl" type="url" maxlength="1145" value="https://www.bilibili.com"/>
+		</header>
+		<iframe src="https://www.bilibili.com/"></iframe>
+		<script>
+			function to_url(text) {
+				var u = text.trim();
+				if (!(u.startsWith('https://')||u.startsWith('http://'))) {
+					u = "https://" + u;
+				}
+				return u;
+			}
+			
+			function changeurl(url) {
+				url = to_url(url);
+				$("iframe").prop("src", url);
+			}
+			
+			$("#enterbtn").click(
+				function(){
+					changeurl($("#inputurl").prop("value"));
+				}
+			);
+			
+			$(document).ready(
+				function(){
+					var w = location.search;
+					var u = '';
+					if (w=='') {
+						u = "https://www.bilibili.com"
+					} else {
+						u = w;
+						u = u.slice(1);
+					}
+					$("#inputurl").prop("value", u)
+					changeurl(u);
+				}
+			)
+		</script>
+	</body>
+</html>

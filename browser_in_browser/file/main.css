@@ -1,0 +1,35 @@
+body {
+	overflow: hidden;
+	margin: 0px;
+}
+
+header {
+	width: 100vw;
+	height: 50px;
+	background-color: #eee;
+
+}
+
+button {
+	display: inline;
+	vertical-align: middle;
+	height: 40px;
+	width: 40px;
+	margin: 5px;
+	border-radius: 50%;
+	border: 3px solid #222;
+	overflow: hidden;
+	font-size: 15px;
+}
+
+#inputurl {
+	height: 30px;
+	width: calc(100% - 100px);
+}
+
+iframe {
+	width: 100vw;
+	height: calc(100vh - 50px);
+	border: none;
+	display: block;
+}
